@@ -1,4 +1,4 @@
-export default (state = {loading: true, weatherData: {}}, action) => {
+export default (state = {loading: true, weatherData: {weatherData:[]}}, action) => {
     switch (action.type) {
         case 'GET_WEATHER_DATA':
             return {
@@ -9,7 +9,6 @@ export default (state = {loading: true, weatherData: {}}, action) => {
             return {
                 ...state,
                 loading: action.payload,
-                weatherData: []
             }
         default:
             return state
