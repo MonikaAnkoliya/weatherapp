@@ -99,6 +99,9 @@ class App extends Component {
         if (this.props.loading) {
             return <div className="loading"><h3>Loading.....</h3></div>
         }
+        if (this.props.weatherData.length === 0) {
+            return <div className="loading"><h3>No Data Available</h3></div>
+        }
         return (
             <div className="main-wrapper">
                 <RadioGroup

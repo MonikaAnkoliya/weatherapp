@@ -8,7 +8,8 @@ export default (state = {loading: true, weatherData: {}}, action) => {
         case 'SET_LOADER':
             return {
                 ...state,
-                loading: action.payload
+                loading: action.payload,
+                weatherData: []
             }
         default:
             return state
