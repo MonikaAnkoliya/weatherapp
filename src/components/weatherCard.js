@@ -16,7 +16,7 @@ const formatAMPM = (date) => {
     const strTime = hours + ampm;
     const strTime2 = hours2 + ampm2;
     return strTime + "-" + strTime2;
-}
+};
 
 const SimpleCard = (props) => {
     const monthNames = ["Jan", "Feb", "March", "April", "May", "June",

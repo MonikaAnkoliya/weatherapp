@@ -6,15 +6,18 @@ import {
     ValueAxis,
 } from '@devexpress/dx-react-chart-material-ui';
 import {Animation} from '@devexpress/dx-react-chart';
+import Paper from '@material-ui/core/Paper';
+
 
 export default class WeatherChart extends React.PureComponent {
     constructor(props) {
         super(props);
 
         this.state = {
-            data: [{time: "0PM-3PM", weatherList: 0}],
+            data: [
+                {weatherList: 69.87, time: "6PM-9PM"},
+            ],
         };
-        console.log('props.chartData', props.chartData);
     }
 
     componentDidMount() {

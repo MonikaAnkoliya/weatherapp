@@ -23,25 +23,27 @@ class App extends Component {
 
     componentDidMount() {
         this.props.getWeatherData().then((res) => {
-            this.onWeatherCardSelect(res[0])
+            this.setState({
+                currentData: res[0]
+            },()=>{
+                console.log('called did');
+                this.setChartCardData(res[0])
+            })
         })
     }
 
     handleChange = (event) => {
         this.setState({
             value: event.target.value,
-        }, () => {
-            this.getChartData();
+        },()=>{
+            this.setChartCardData();
         })
     };
 
     onNextClick = () => {
         if ((this.props.weatherData.length / 3) - 1 !== this.state.page) {
-            this.setState({
-                page: this.state.page + 1
-            })
+            this.setState({ page: this.state.page + 1 })
         }
-
     };
 
     onPreviousClick = () => {
@@ -50,32 +52,19 @@ class App extends Component {
         })
     };
 
-    onWeatherCardSelect = (data) => {
-        const chartData = data.weather.map((data1) => {
+    setChartCardData = (data = this.state.currentData) => {
+        const chartData = data.weather.map((data1,inde) => {
             const time = this.formatAMPM(new Date(data1.dt_txt));
             return {
-                fahrenheit_temp: parseFloat(data1.fahrenheit_temp.toFixed(2)),
-                celcius_temp: parseFloat(data1.celcius_temp.toFixed(2)),
+                weatherList: this.state.value === 'fahrenheit' ?
+                    parseFloat(data1.fahrenheit_temp.toFixed(2)) :
+                    parseFloat(data1.celcius_temp.toFixed(2)),
                 time: time
             };
         });
         this.setState({
-            chartAllData: chartData,
-        }, () => {
-            this.getChartData();
-        })
-
-    };
-
-    getChartData = () => {
-        const chartData = this.state.chartAllData.map((data) => {
-            return {
-                time: data.time,
-                weatherList: this.state.value === 'fahrenheit' ? data.fahrenheit_temp : data.celcius_temp,
-            };
-        });
-        this.setState({
             chartData,
+            currentData: data,
         })
     };
 
@@ -122,7 +111,7 @@ class App extends Component {
                 </div>
                 <WeatherList
                     page={this.state.page}
-                    onWeatherCardSelect={this.onWeatherCardSelect}
+                    onWeatherCardSelect={this.setChartCardData}
                     tampType={this.state.value}
                 />
                 <div className="chart-wrapper">

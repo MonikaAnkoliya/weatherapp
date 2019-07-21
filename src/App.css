@@ -74,8 +74,13 @@
 }
 
 .chart-wrapper{
-  width: 60%;
+  width: 70%;
   margin: auto;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
 }
 
 @media screen and (max-width: 600px) {
@@ -93,4 +98,8 @@
     width: 100%;
     margin: auto;
   }
+}
+
+#bottom-axis-container div svg {
+  height: 25px
 }
