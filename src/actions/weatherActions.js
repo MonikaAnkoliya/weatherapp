@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export const getWeatherData = () => dispatch => {
     return new Promise((resolve,reject)=>{
         fetch('http://api.openweathermap.org/data/2.5/forecast?q=Munich,de&APPID=75f972b80e26f14fe6c920aa6a85ad57&cnt=40')
@@ -18,7 +20,7 @@ export const getWeatherData = () => dispatch => {
                 });
                 // UPDATE OBJECT BY DATE
                 const groups = list.reduce((groups, game) => {
-                    const date = game.dt_txt.split(' ')[0];
+                    const date = moment(game.dt_txt).format('YYYY-MM-DD');
                     if (!groups[date]) {
                         groups[date] = [];
                     }
