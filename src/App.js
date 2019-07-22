@@ -19,6 +19,7 @@ class App extends Component {
             page: 0,
             chartData: [],
             selectedCard: {},
+            errText: '',
         }
     }
 
@@ -27,8 +28,14 @@ class App extends Component {
             this.setState({
                 currentData: res[0]
             },()=>{
-                console.log('called did');
                 this.setChartCardData(res[0])
+            })
+        }).catch((err)=>{
+            this.setState({
+                currentData: err.data[0],
+                errText: err.errMsg,
+            },()=>{
+                this.setChartCardData(err.data[0])
             })
         })
     }
@@ -87,6 +94,7 @@ class App extends Component {
 
         return (
             <div className="main-wrapper">
+                <div>{this.state.errText}</div>
                 <RadioGroup
                     aria-label="Gender"
                     name="gender1"
