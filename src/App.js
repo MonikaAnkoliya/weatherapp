@@ -77,13 +77,14 @@ class App extends Component {
 
 
     render() {
-        const isNext = (this.props.weatherData.length / 3) - 1 !== this.state.page;
         if (this.props.loading) {
             return <div className="loading"><h3>Loading.....</h3></div>
         }
         if (this.props.weatherData.length === 0) {
             return <div className="loading"><h3>No Data Available</h3></div>
         }
+        const isNext = (this.props.weatherData.length / 3) - 1 !== this.state.page;
+
         return (
             <div className="main-wrapper">
                 <RadioGroup

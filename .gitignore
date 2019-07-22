@@ -58,7 +58,7 @@ typings/
 package-lock.json
 yarn.lock
 .idea/
-
+dist/
 # dotenv environment variables file
 .env
 
