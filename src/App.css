@@ -1,3 +1,7 @@
+body {
+  scrollbar-width: none
+}
+
 .loading{
   align-items: center;
   display: flex;
@@ -45,10 +49,6 @@
   z-index: 10;
 }
 
-/*.temp:hover{*/
-/*  width: 250px;*/
-/*  height: auto;*/
-/*}*/
 .card-wrapper .temp .temp2:hover {
   position: absolute;
   z-index: 9;
@@ -79,11 +79,6 @@
 .chart-wrapper{
   width: 70%;
   margin: auto;
-}
-
-::-webkit-scrollbar {
-  width: 0;
-  background: transparent; /* make scrollbar transparent */
 }
 
 /*Set Pagination icon and chart width upto max width 600px*/
