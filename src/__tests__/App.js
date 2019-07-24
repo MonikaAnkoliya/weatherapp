@@ -24,11 +24,8 @@ describe('App component', () => {
         wrapper = mount(<App {...props} store={store}/>);
     });
 
-    // let component;
-
     it('should contain h3 elements', () => {
         const header = wrapper.find('div');
         expect(header).toHaveLength(1);
     });
-
 });

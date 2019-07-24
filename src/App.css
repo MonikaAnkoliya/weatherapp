@@ -10,7 +10,9 @@
 .main-wrapper{
   justify-content: center;
   align-items: center;
-  margin: 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 100%;
 }
 
 .radio-wrapper{
@@ -97,6 +99,27 @@
   .chart-wrapper {
     width: 100%;
     margin: auto;
+  }
+}
+
+@media only screen and (min-device-width: 480px)
+and (max-device-width: 736px)
+and (orientation: landscape) {
+  .card-wrapper{
+    display: flex;
+    background-color: blue;
+    -webkit-flex-wrap: wrap;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .card-wrapper{
+    -webkit-flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .card-wrapper{
+    display: grid;
   }
 }
 
