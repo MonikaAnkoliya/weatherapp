@@ -15,7 +15,7 @@ export default class WeatherChart extends React.PureComponent {
 
         this.state = {
             data: [
-                {weatherList: 69.87, time: "6PM-9PM"},
+                {weatherList: 69.87, time: "6-9"},
             ],
         };
     }

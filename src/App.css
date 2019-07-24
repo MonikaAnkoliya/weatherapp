@@ -86,10 +86,6 @@
   background: transparent; /* make scrollbar transparent */
 }
 
-#bottom-axis-container div svg {
-  height: 25px;
-}
-
 /*Set Pagination icon and chart width upto max width 600px*/
 @media screen and (max-width: 600px) {
   .pagination-wrapper{
@@ -105,3 +101,6 @@
   }
 }
 
+#bottom-axis-container div svg {
+  height: 25px;
+}
