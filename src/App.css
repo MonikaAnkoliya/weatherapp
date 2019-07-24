@@ -81,11 +81,6 @@
   margin: auto;
 }
 
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent; /* make scrollbar transparent */
-}
-
 /*Set Pagination icon and chart width upto max width 600px*/
 @media screen and (max-width: 600px) {
   .pagination-wrapper{
@@ -103,4 +98,9 @@
 
 #bottom-axis-container div svg {
   height: 25px;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
 }
