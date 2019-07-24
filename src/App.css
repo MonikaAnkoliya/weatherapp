@@ -32,6 +32,7 @@
 .card-wrapper{
   width: 100%;
   display: flex;
+  -webkit-flex-wrap: wrap;
   justify-content: center;
   margin: auto;
 }
@@ -84,7 +85,7 @@
   width: 0px;
   background: transparent; /* make scrollbar transparent */
 }
-
+/*Set Pagination icon and chart width upto max width 600px*/
 @media screen and (max-width: 600px) {
   .pagination-wrapper{
     margin: 15px;
@@ -93,33 +94,12 @@
     width: 100%;
     text-align: right;
   }
-  .card-wrapper {
-    display: block;
-  }
   .chart-wrapper {
     width: 100%;
     margin: auto;
   }
-}
-
-@media only screen and (min-device-width: 480px)
-and (max-device-width: 736px)
-and (orientation: landscape) {
-  .card-wrapper{
-    display: flex;
-    -webkit-flex-wrap: wrap;
-  }
-}
-@media (min-width: 768px) and (max-width: 1024px) {
-  .card-wrapper{
-    -webkit-flex-wrap: wrap;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 480px) {
-  .card-wrapper{
-    display: flex;
-    -webkit-flex-wrap: wrap;
+  .chart-wrapper #bottom-axis-container div svg {
+    height: 25px;
   }
 }
 

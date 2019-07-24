@@ -77,8 +77,8 @@ class App extends Component {
     };
 
     formatAMPM = (date) => {
-        let time1 = moment(date).format("hA");
-        let time2 = moment(date).add(3, 'h').format("hA");
+        let time1 = moment(date).format("H");
+        let time2 = moment(date).add(3, 'h').format("k");
         return time1 + "-" + time2;
     };
 
