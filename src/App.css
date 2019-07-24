@@ -99,8 +99,3 @@
 #bottom-axis-container div svg {
   height: 25px;
 }
-
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent; /* make scrollbar transparent */
-}
