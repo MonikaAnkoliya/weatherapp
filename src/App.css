@@ -98,12 +98,6 @@
     width: 100%;
     margin: auto;
   }
-  .chart-wrapper #bottom-axis-container div svg {
-    height: 25px;
-  }
-  .chart-wrapper #bottom-axis-container div svg text{
-    font-size: 5px;
-  }
 }
 
 #bottom-axis-container div svg {
