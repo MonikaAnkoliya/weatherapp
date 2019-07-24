@@ -2,6 +2,7 @@
   "name": "weather_app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://monikaankoliya.github.io/weatherapp",
   "dependencies": {
     "@devexpress/dx-react-chart": "^2.0.1",
     "@devexpress/dx-react-chart-material-ui": "^2.0.1",
@@ -9,6 +10,7 @@
     "@material-ui/core": "^4.2.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
+    "gh-pages": "^2.0.1",
     "lodash": "^4.17.14",
     "moment": "^2.24.0",
     "path": "^0.12.7",
@@ -33,7 +35,8 @@
   },
   "scripts": {
     "start": "webpack -p && webpack-dev-server",
-    "unit": "jest"
+    "unit": "jest",
+    "deploy": "gh-pages -d dist"
   },
   "eslintConfig": {
     "extends": "react-app"
