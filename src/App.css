@@ -1,7 +1,3 @@
-body {
-  scrollbar-width: none
-}
-
 .loading{
   align-items: center;
   display: flex;
@@ -79,6 +75,12 @@ body {
 .chart-wrapper{
   width: 70%;
   margin: auto;
+}
+
+::-webkit-scrollbar { display:none }
+
+@-moz-document url-prefix() {
+  html,body{scrollbar-width: none;}
 }
 
 /*Set Pagination icon and chart width upto max width 600px*/
