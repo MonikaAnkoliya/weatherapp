@@ -14,11 +14,12 @@ const SimpleCard = (props) => {
     const monthNames = ["Jan", "Feb", "March", "April", "May", "June",
         "July", "Aug", "Sep", "Oct", "Nov", "Dec"
     ];
+    const selectedCard = props.selectDate === props.data.date ? 'select-card' : '';
     if(props.data) {
         const date = new Date(props.data.date)
         return (
             <div onClick={() => props.onWeatherCardSelect(props.data)}>
-                <Card className="temp">
+                <Card className={`temp ${selectedCard}`}>
                     <CardContent>
                         <Typography variant="h5" component="h2">
                             {date.getDate() + ' ' + monthNames[date.getMonth()] + ',' + date.getFullYear()}

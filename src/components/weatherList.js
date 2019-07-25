@@ -40,6 +40,7 @@ class WeatherList extends Component {
                             data={data}
                             onWeatherCardSelect={this.props.onWeatherCardSelect}
                             tampType={this.props.tampType}
+                            selectDate={this.props.selectDate}
                         />
                     )
                 })}

@@ -26,13 +26,15 @@ class App extends Component {
     componentDidMount() {
         this.props.getWeatherData().then((res) => {
             this.setState({
-                currentData: res[0]
+                currentData: res[0],
+                selectDate: res[0].date
             },()=>{
                 this.setChartCardData(res[0])
             })
         }).catch((err)=>{
             this.setState({
                 currentData: err.data[0],
+                selectDate: err.data[0].date,
                 errText: err.errMsg,
             },()=>{
                 this.setChartCardData(err.data[0])
@@ -62,25 +64,28 @@ class App extends Component {
 
     setChartCardData = (data = this.state.currentData) => {
         const chartData = data.weather.map((data1,inde) => {
-            const time = this.formatAMPM(data1.dt_txt);
+            const tempType = this.state.value === 'fahrenheit' ?
+                parseFloat(data1.fahrenheit_temp.toFixed(1)) :
+                parseFloat(data1.celcius_temp.toFixed(1));
+            // const time = this.formatAMPM(data1.dt_txt);
+            const tempSym = this.state.value === 'fahrenheit' ? '°F' : '°C';
             return {
-                weatherList: this.state.value === 'fahrenheit' ?
-                    parseFloat(data1.fahrenheit_temp.toFixed(2)) :
-                    parseFloat(data1.celcius_temp.toFixed(2)),
-                time: time
+                weatherList: tempType,
+                time: tempType+tempSym,
             };
         });
         this.setState({
             chartData,
             currentData: data,
+            selectDate: data.date,
         })
     };
 
-    formatAMPM = (date) => {
-        let time1 = moment(date).format("H");
-        let time2 = moment(date).add(3, 'h').format("k");
-        return time1 + "-" + time2;
-    };
+    // formatAMPM = (date) => {
+    //     let time1 = moment(date).format("H");
+    //     let time2 = moment(date).add(3, 'h').format("k");
+    //     return time1 + "-" + time2;
+    // };
 
 
     render() {
@@ -115,11 +120,15 @@ class App extends Component {
                     page={this.state.page}
                     onWeatherCardSelect={this.setChartCardData}
                     tampType={this.state.value}
+                    selectDate={this.state.selectDate}
                 />
                 <div className="chart-wrapper">
                     <WeatherChart
                         chartData={this.state.chartData}
                     />
+                </div>
+                <div className="bottom-wrap">
+                    <p>Temperature(°F/°C) vs Time(3 Hours)</p>
                 </div>
             </div>
         );

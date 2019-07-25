@@ -3,10 +3,9 @@ import {
     Chart,
     BarSeries,
     ArgumentAxis,
-    ValueAxis,
+    // ValueAxis,
 } from '@devexpress/dx-react-chart-material-ui';
 import {Animation} from '@devexpress/dx-react-chart';
-import Paper from '@material-ui/core/Paper';
 
 
 export default class WeatherChart extends React.PureComponent {
@@ -39,7 +38,7 @@ export default class WeatherChart extends React.PureComponent {
                 height={200}
             >
                 <ArgumentAxis />
-                <ValueAxis/>
+                {/*<ValueAxis/>*/}
 
                 <BarSeries
                     valueField="weatherList"
