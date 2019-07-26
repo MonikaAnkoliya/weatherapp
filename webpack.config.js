@@ -10,7 +10,8 @@ module.exports = {
     },
     devServer: {
         contentBase: './',
-        publicPath: '/dist/'
+        publicPath: '/dist/',
+        port: 4000,
     },
     module: {
         rules: [
@@ -25,12 +26,18 @@ module.exports = {
                     'style-loader',
                     'css-loader',
                 ],
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    'file-loader'
+                ]
             }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template:  path.resolve('./index.html'),
+            template: path.resolve('./index.html'),
         }),
     ]
 };
