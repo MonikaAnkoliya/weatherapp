@@ -3,9 +3,10 @@ import {
     Chart,
     BarSeries,
     ArgumentAxis,
-    // ValueAxis,
+    ValueAxis,
+    Tooltip
 } from '@devexpress/dx-react-chart-material-ui';
-import {Animation} from '@devexpress/dx-react-chart';
+import {Animation, EventTracker, HoverState} from '@devexpress/dx-react-chart';
 
 
 export default class WeatherChart extends React.PureComponent {
@@ -38,12 +39,15 @@ export default class WeatherChart extends React.PureComponent {
                 height={200}
             >
                 <ArgumentAxis />
-                {/*<ValueAxis/>*/}
+                <ValueAxis/>
 
                 <BarSeries
                     valueField="weatherList"
                     argumentField="time"
                 />
+                <EventTracker />
+                <HoverState />
+                <Tooltip/>
                 <Animation/>
             </Chart>
         );

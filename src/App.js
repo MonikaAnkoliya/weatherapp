@@ -67,11 +67,11 @@ class App extends Component {
             const tempType = this.state.value === 'fahrenheit' ?
                 parseFloat(data1.fahrenheit_temp.toFixed(1)) :
                 parseFloat(data1.celcius_temp.toFixed(1));
-            // const time = this.formatAMPM(data1.dt_txt);
-            const tempSym = this.state.value === 'fahrenheit' ? '°F' : '°C';
+            const time = this.formatAMPM(data1.dt_txt);
+            // const tempSym = this.state.value === 'fahrenheit' ? '°F' : '°C';
             return {
                 weatherList: tempType,
-                time: tempType+tempSym,
+                time: time,
             };
         });
         this.setState({
@@ -81,11 +81,11 @@ class App extends Component {
         })
     };
 
-    // formatAMPM = (date) => {
-    //     let time1 = moment(date).format("H");
-    //     let time2 = moment(date).add(3, 'h').format("k");
-    //     return time1 + "-" + time2;
-    // };
+    formatAMPM = (date) => {
+        let time1 = moment(date).format("H");
+        let time2 = moment(date).add(3, 'h').format("k");
+        return time1 + "-" + time2;
+    };
 
 
     render() {
