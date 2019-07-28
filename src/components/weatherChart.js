@@ -27,9 +27,11 @@ export default class WeatherChart extends React.PureComponent {
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
-        this.setState({
-            data: nextProps.chartData,
-        })
+        if(nextProps.chartData !== this.props.chartData) {
+            this.setState({
+                data: nextProps.chartData,
+            })
+        }
     }
 
     render() {
