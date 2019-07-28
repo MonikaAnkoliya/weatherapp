@@ -8,50 +8,27 @@ import {
 } from '@devexpress/dx-react-chart-material-ui';
 import {Animation, EventTracker, HoverState} from '@devexpress/dx-react-chart';
 
-
-export default class WeatherChart extends React.PureComponent {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            data: [
-                {weatherList: 69.87, time: "6-9"},
-            ],
-        };
+const WeatherChart = ({chartData}) => {
+    if(chartData.length === 0){
+        return null;
     }
+    return (
+        <Chart
+            data={chartData}
+            height={200}
+        >
+            <ArgumentAxis />
+            <ValueAxis/>
 
-    componentDidMount() {
-        this.setState({
-            data: this.props.chartData,
-        })
-    }
-
-    componentWillReceiveProps(nextProps, nextContext) {
-        if(nextProps.chartData !== this.props.chartData) {
-            this.setState({
-                data: nextProps.chartData,
-            })
-        }
-    }
-
-    render() {
-        return (
-            <Chart
-                data={this.state.data}
-                height={200}
-            >
-                <ArgumentAxis />
-                <ValueAxis/>
-
-                <BarSeries
-                    valueField="weatherList"
-                    argumentField="time"
-                />
-                <EventTracker />
-                <HoverState />
-                <Tooltip/>
-                <Animation/>
-            </Chart>
-        );
-    }
+            <BarSeries
+                valueField="weatherList"
+                argumentField="time"
+            />
+            <EventTracker />
+            <HoverState />
+            <Tooltip/>
+            <Animation/>
+        </Chart>
+    );
 }
+export default WeatherChart;
