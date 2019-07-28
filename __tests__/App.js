@@ -2,7 +2,7 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import RadioGroup from '@material-ui/core/RadioGroup';
 
-import {App} from '../App';
+import {App} from '../src/App';
 
 const mockData = [
     {
@@ -191,7 +191,7 @@ describe('App component', () => {
         expect(instance.state.value).toEqual('celcius');
     });
 
-    it('should click next page', () => {
+    it('should handle next page', () => {
         wrapper.setState({page: 3});
         const icon = wrapper.find('#next-page');
         expect(icon).toHaveLength(1);
@@ -199,7 +199,7 @@ describe('App component', () => {
         expect(instance.state.page).toEqual(4);
     })
 
-    it('should click previous page', () => {
+    it('should handle previous page', () => {
         wrapper.setState({page: 3});
         const icon = wrapper.find('#previous-page');
         expect(icon).toHaveLength(1);

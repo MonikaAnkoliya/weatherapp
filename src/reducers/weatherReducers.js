@@ -1,4 +1,4 @@
-export default (state = {loading: true, weatherData: {weatherData:[]}}, action) => {
+export default (state = {loading: true, weatherData: []}, action) => {
     switch (action.type) {
         case 'GET_WEATHER_DATA':
             return {

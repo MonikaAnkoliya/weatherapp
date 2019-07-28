@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import WeatherCard from './weatherCard';
+import WeatherCard from './components/weatherCard';
 
 class WeatherList extends Component {
     constructor(props) {

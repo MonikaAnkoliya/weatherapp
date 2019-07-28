@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import './App.css';
 import {getWeatherData} from './actions/weatherActions';
-import WeatherList from './components/weatherList';
+import WeatherList from './weatherList';
 import WeatherChart from './components/weatherChart';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';

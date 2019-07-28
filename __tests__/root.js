@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import MainApp from "../root";
-import App from "../App";
+import MainApp from "../src/root";
+import App from "../src/App";
 
 describe('Root component', () => {
   let component;

@@ -19,7 +19,7 @@ const SimpleCard = (props) => {
     if(props.data) {
         const date = new Date(props.data.date)
         return (
-            <div onClick={() => props.onWeatherCardSelect(props.data)}>
+            <div id="weather-card" onClick={() => props.onWeatherCardSelect(props.data)}>
                 <Card className={`temp ${selectedCard}`}>
                     <CardContent>
                         <Typography variant="h5" component="h2">
