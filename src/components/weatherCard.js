@@ -41,7 +41,7 @@ const SimpleCard = (props) => {
                                     return (
                                         <div key={index}>
                                             <Typography className="weather-description-wrapper" component="div">
-                                                {formatAMPM(weather.dt_txt)}:-&nbsp;{weather.weather[0].description}
+                                                {formatAMPM(weather.dt_txt)}:-&nbsp;{weather.weather[0].main}
                                                 <img className="weather-description" alt=""
                                                      src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`}/>
                                             </Typography>

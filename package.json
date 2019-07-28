@@ -35,7 +35,7 @@
   },
   "scripts": {
     "start": "webpack -p && webpack-dev-server",
-    "unit": "jest",
+    "unit": "jest --watch --verbose",
     "deploy": "gh-pages -d dist"
   },
   "eslintConfig": {
