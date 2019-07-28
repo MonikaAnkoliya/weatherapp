@@ -51,7 +51,7 @@
   background: #ffff;
   border: 1px solid lightgray;
   border-radius: 5px;
-  padding: 25px;
+  padding: 25px 45px;
 }
 .card-wrapper .temp .temp2 .weather-description-wrapper{
   display: flex;
