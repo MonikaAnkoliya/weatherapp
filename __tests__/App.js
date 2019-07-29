@@ -152,20 +152,8 @@ describe('App component', () => {
 
     beforeAll(() => {
         wrapper = shallow(<App {...props}/>);
-        promise.then((res) => {
-            wrapper.instance().setState({
-                currentData: res[0],
-                selectDate: res[0].date
-            });
-            wrapper.setProps({loading: false})
-        }).catch((err) => {
-            wrapper.instance().setState({
-                currentData: err.data[0],
-                selectDate: err.data[0].date,
-                errText: err.errMsg
-            });
-            wrapper.setProps({loading: false})
-        });
+        wrapper.setProps({loading:false})
+        wrapper.update();
         instance = wrapper.instance();
     })
 
