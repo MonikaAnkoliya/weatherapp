@@ -1,7 +1,7 @@
 import moment from 'moment';
 import data from '../data/data';
 
-const setWeatherDataFormat = (data) => {
+export const setWeatherDataFormat = (data) => {
     const list = data.map((data) => {
         const temperature = {
             celcius_temp: data.main.temp - 273.15,
